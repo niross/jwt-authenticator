@@ -1,0 +1,47 @@
+{
+  "name": "jwt-authenticator",
+  "version": "1.0.0",
+  "description": "Authentication wrapper for jwt-backed apps",
+  "main": "src/Authenticator.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --require ./test/helper.js --require react-native-mock/mock.js --recursive 'test/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niross/jwt-authenticator.git"
+  },
+  "author": "Nick Ross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niross/jwt-authenticator/issues"
+  },
+  "homepage": "https://github.com/niross/jwt-authenticator#readme",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-native": "^0.27.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react-native": "^1.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "chai-immutable": "^1.6.0",
+    "dirty-chai": "^1.2.2",
+    "enzyme": "^2.3.0",
+    "eslint": "^2.12.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.4.2",
+    "eslint-plugin-mocha": "^3.0.0",
+    "eslint-plugin-react": "^5.1.1",
+    "fetch-mock": "^4.5.4",
+    "jsdom": "^9.2.1",
+    "mocha": "^2.5.3",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-native-mock": "^0.2.3",
+    "sinon": "^1.17.4"
+  }
+}
