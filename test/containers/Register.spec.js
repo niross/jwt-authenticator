@@ -19,6 +19,7 @@ describe('Register Component', () => {
   it('renders the component', () => {
     const wrapper = shallow(
       <Register
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/register"
       />
@@ -31,6 +32,7 @@ describe('Register Component', () => {
   it('updates state on name input change', () => {
     const wrapper = shallow(
       <Register
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/register"
       />
@@ -43,6 +45,7 @@ describe('Register Component', () => {
   it('updates state on email input change', () => {
     const wrapper = shallow(
       <Register
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/register"
       />
@@ -55,6 +58,7 @@ describe('Register Component', () => {
   it('updates state on password input change', () => {
     const wrapper = shallow(
       <Register
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/register"
       />
@@ -68,6 +72,7 @@ describe('Register Component', () => {
     fetchMock.mock('/api/accounts/register', 200);
     const wrapper = shallow(
       <Register
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/register"
       />
@@ -90,6 +95,7 @@ describe('Register Component', () => {
     });
     const wrapper = shallow(
       <Register
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/register"
       />
@@ -118,6 +124,7 @@ describe('Register Component', () => {
     const onAuth = sinon.spy();
     const wrapper = shallow(
       <Register
+        logoText="logo"
         onAuthenticate={onAuth}
         apiEndpoint="/api/accounts/register"
       />

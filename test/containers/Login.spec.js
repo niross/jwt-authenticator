@@ -19,6 +19,7 @@ describe('Login Component', () => {
   it('renders the component', () => {
     const wrapper = shallow(
       <Login
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/authenticate"
       />
@@ -31,6 +32,7 @@ describe('Login Component', () => {
   it('updates state on email input change', () => {
     const wrapper = shallow(
       <Login
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/authenticate"
       />
@@ -43,6 +45,7 @@ describe('Login Component', () => {
   it('updates state on password input change', () => {
     const wrapper = shallow(
       <Login
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/authenticate"
       />
@@ -56,6 +59,7 @@ describe('Login Component', () => {
     fetchMock.mock('/api/accounts/authenticate', 200);
     const wrapper = shallow(
       <Login
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/authenticate"
       />
@@ -77,6 +81,7 @@ describe('Login Component', () => {
     });
     const wrapper = shallow(
       <Login
+        logoText="logo"
         onAuthenticate={noop}
         apiEndpoint="/api/accounts/authenticate"
       />
@@ -101,6 +106,7 @@ describe('Login Component', () => {
     const onAuth = sinon.spy();
     const wrapper = shallow(
       <Login
+        logoText="logo"
         onAuthenticate={onAuth}
         apiEndpoint="/api/accounts/authenticate"
       />

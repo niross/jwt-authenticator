@@ -1,18 +1,23 @@
 import React, { PropTypes } from 'react';
-import { View, Text, TextInput } from 'react-native';
-
-import { parseJSON } from '../utils';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { Button } from 'rn-button';
 
+import { Styles } from '../Styles';
+import { parseJSON } from '../utils';
+
 const propTypes = {
+  logoText: PropTypes.string.isRequired,
   onAuthenticate: PropTypes.func.isRequired,
-  apiEndpoint: PropTypes.string.isRequired
+  apiEndpoint: PropTypes.string.isRequired,
+  styles: PropTypes.object
 };
 const defaultProps = {
-  loading: false
+  loading: false,
+  styles: {
+    container: {},
+    logoText: {}
+  }
 };
-
-import { Styles } from '../Styles';
 
 export class Register extends React.Component {
   constructor(props) {
@@ -38,7 +43,7 @@ export class Register extends React.Component {
     return fetch(this.props.apiEndpoint, {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -58,10 +63,9 @@ export class Register extends React.Component {
         else {
           this.setState({ loading: false });
           this.props.onAuthenticate(response);
-          // this.props.navigator.pop();
         }
       })
-      .catch((err) => {
+      .catch(() => {
         this.setState({
           loading: false,
           error: 'An error occurred while creating your account. Please try again.'
@@ -72,9 +76,11 @@ export class Register extends React.Component {
   render() {
     return (
       <View style={Styles.loginContainer}>
-        <View style={Styles.loginLogoContainer}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ color: 'black', fontWeight: 'bold' }}>LOGO</Text>
+        <View style={Styles.logoContainer}>
+          <View style={Styles.logoWrap}>
+            <Text style={[Styles.logoText, StyleSheet.create(this.props.styles.logoText)]}>
+              {this.props.logoText}
+            </Text>
           </View>
         </View>
         <View style={Styles.formErrorContainer}>

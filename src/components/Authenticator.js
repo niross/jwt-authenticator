@@ -81,6 +81,8 @@ export class Authenticator extends React.Component {
               this.props.navigator.push({
                 component: Register,
                 props: {
+                  styles: this.props.styles,
+                  logoText: this.props.logoText,
                   onAuthenticate: (user) => this.handleOnAuthenticate(user),
                   apiEndpoint: this.props.registerEndpoint
                 }
@@ -93,6 +95,8 @@ export class Authenticator extends React.Component {
               this.props.navigator.push({
                 component: Login,
                 props: {
+                  styles: this.props.styles,
+                  logoText: this.props.logoText,
                   onAuthenticate: (email, token) => this.handleOnAuthenticate(email, token),
                   apiEndpoint: this.props.authenticateEndpoint
                 }
