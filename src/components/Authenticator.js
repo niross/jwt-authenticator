@@ -13,7 +13,7 @@ const propTypes = {
   children: PropTypes.node,
   authenticateEndpoint: PropTypes.string.isRequired,
   registerEndpoint: PropTypes.string.isRequired,
-  logoText: PropTypes.string.isequired,
+  logoText: PropTypes.string.isRequired,
   styles: PropTypes.object
 };
 const defaultProps = {
