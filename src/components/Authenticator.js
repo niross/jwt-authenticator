@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Text, View, AsyncStorage } from 'react-native';
+import { Text, View, AsyncStorage, StyleSheet } from 'react-native';
 
 import { Styles } from '../Styles';
 import { Login } from '../containers/Login';
@@ -12,9 +12,16 @@ const propTypes = {
   route: PropTypes.object,
   children: PropTypes.node,
   authenticateEndpoint: PropTypes.string.isRequired,
-  registerEndpoint: PropTypes.string.isRequired
+  registerEndpoint: PropTypes.string.isRequired,
+  logoText: PropTypes.string.isequired,
+  styles: PropTypes.object
 };
-const defaultProps = {};
+const defaultProps = {
+  styles: {
+    container: {},
+    logoText: {}
+  }
+};
 
 export class Authenticator extends React.Component {
   constructor(props) {
@@ -54,10 +61,17 @@ export class Authenticator extends React.Component {
 
     // Otherwise show the auth component
     return (
-      <View style={Styles.container}>
+      <View
+        style={[
+          Styles.container,
+          StyleSheet.create(this.props.styles.container)
+        ]}
+      >
         <View style={Styles.logoContainer}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ color: 'white', fontWeight: 'bold' }}>LOGO</Text>
+          <View style={Styles.logoWrap}>
+            <Text style={[Styles.logoText, StyleSheet.create(this.props.logoText)]}>
+              {this.props.logoText}
+            </Text>
           </View>
         </View>
         <View style={Styles.formContainer}>

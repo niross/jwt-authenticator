@@ -6,6 +6,15 @@ export const Styles = {
   logoContainer: {
     flex: 2
   },
+  logoWrap: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  logoText: {
+    color: 'white',
+    fontWeight: 'bold'
+  },
   formContainer: {
     flex: 1
   },
