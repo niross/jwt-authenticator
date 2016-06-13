@@ -12,7 +12,6 @@ export const Styles = {
     alignItems: 'center'
   },
   logoText: {
-    color: 'white',
     fontWeight: 'bold'
   },
   formContainer: {

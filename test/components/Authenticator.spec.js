@@ -13,7 +13,13 @@ describe('Authenticator Component', () => {
 
   it('renders the splash page on initial load', () => {
     const wrapper = shallow(
-      <Authenticator navigator={{}} route={{}} authenticateEndpoint="" registerEndpoint="">
+      <Authenticator
+        navigator={{}}
+        route={{}}
+        authenticateEndpoint=""
+        registerEndpoint=""
+        logoText="The Logo"
+      >
         <Text>children</Text>
       </Authenticator>
     );
@@ -22,7 +28,13 @@ describe('Authenticator Component', () => {
 
   it('renders the authenticator if the user is not authenticated', () => {
     const wrapper = mount(
-      <Authenticator navigator={{}} route={{}} authenticateEndpoint="" registerEndpoint="">
+      <Authenticator
+        navigator={{}}
+        route={{}}
+        authenticateEndpoint=""
+        registerEndpoint=""
+        logoText="The Logo"
+      >
         <Text>children</Text>
       </Authenticator>
     );
@@ -42,7 +54,13 @@ describe('Authenticator Component', () => {
       this.setState({ loading: false, user: { token: 'xxxxxx' } });
     };
     const wrapper = mount(
-      <Authenticator navigator={{}} route={{}} authenticateEndpoint="" registerEndpoint="">
+      <Authenticator
+        navigator={{}}
+        route={{}}
+        authenticateEndpoint=""
+        registerEndpoint=""
+        logoText="The Logo"
+      >
         {child}
       </Authenticator>
     );

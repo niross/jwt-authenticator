@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 
 import { parseJSON } from '../utils';
-import { Button } from '../components/Button';
+import { Button } from 'rn-button';
 
 const propTypes = {
   onAuthenticate: PropTypes.func.isRequired,

@@ -4,7 +4,7 @@ import { Text, View, AsyncStorage, StyleSheet } from 'react-native';
 import { Styles } from '../Styles';
 import { Login } from '../containers/Login';
 import { Register } from '../containers/Register';
-import { Button } from './Button';
+import { Button } from 'rn-button';
 import { Splash } from './Splash';
 
 const propTypes = {
@@ -69,7 +69,7 @@ export class Authenticator extends React.Component {
       >
         <View style={Styles.logoContainer}>
           <View style={Styles.logoWrap}>
-            <Text style={[Styles.logoText, StyleSheet.create(this.props.logoText)]}>
+            <Text style={[Styles.logoText, StyleSheet.create(this.props.styles.logoText)]}>
               {this.props.logoText}
             </Text>
           </View>

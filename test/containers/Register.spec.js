@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 const fetchMock = require('fetch-mock');
 import sinon from 'sinon';
 
-import { Button } from '../../src/components/Button';
+import { Button } from 'rn-button';
 import { Register } from '../../src/containers/Register';
 
 const noop = () => {};
