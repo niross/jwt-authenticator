@@ -2,7 +2,7 @@
   "name": "jwt-authenticator",
   "version": "1.0.0",
   "description": "Authentication wrapper for jwt-backed apps",
-  "main": "src/Authenticator.js",
+  "main": "src/components/Authenticator.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/helper.js --require react-native-mock/mock.js --recursive 'test/**/*.js'"
   },
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/niross/jwt-authenticator#readme",
   "devDependencies": {
-    "react": "^15.1.0",
     "react-native": "^0.27.2",
     "babel-core": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
