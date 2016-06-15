@@ -41,6 +41,7 @@ export class Authenticator extends React.Component {
         loading: false,
         user: user ? JSON.parse(user) : null
       });
+      if (user) this.props.onAuthenticate(JSON.parse(user));
     });
   }
 
