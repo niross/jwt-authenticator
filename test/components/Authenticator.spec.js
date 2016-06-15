@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, AsyncStorage } from 'react-native';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
+import sinon from 'sinon';
 
 import { Authenticator } from '../../src/components/Authenticator';
 import { Splash } from '../../src/components/Splash';
@@ -66,6 +67,25 @@ describe('Authenticator Component', () => {
     );
     expect(wrapper).to.exist();
     expect(wrapper.contains(child)).to.be.true();
+    done();
+  });
+
+  it('invokes the onAuthenticate callback on successful authentication', (done) => {
+    const onAuth = sinon.spy();
+    const wrapper = shallow(
+      <Authenticator
+        navigator={{ pop: () => {} }}
+        route={{}}
+        authenticateEndpoint=""
+        registerEndpoint=""
+        logoText="The Logo"
+        onAuthenticate={onAuth}
+      >
+        <Text>Test</Text>
+      </Authenticator>
+    );
+    wrapper.instance().handleOnAuthenticate({ name: 'Test User' });
+    expect(onAuth.calledOnce).to.be.true();
     done();
   });
 });

@@ -14,13 +14,15 @@ const propTypes = {
   authenticateEndpoint: PropTypes.string.isRequired,
   registerEndpoint: PropTypes.string.isRequired,
   logoText: PropTypes.string.isRequired,
-  styles: PropTypes.object
+  styles: PropTypes.object,
+  onAuthenticate: PropTypes.func
 };
 const defaultProps = {
   styles: {
     container: {},
     logoText: {}
-  }
+  },
+  onAuthenticate: () => {}
 };
 
 export class Authenticator extends React.Component {
@@ -46,6 +48,7 @@ export class Authenticator extends React.Component {
     this.setState({ user });
     this.props.navigator.pop();
     AsyncStorage.setItem('user', JSON.stringify(user));
+    this.props.onAuthenticate(user);
   }
 
   render() {
