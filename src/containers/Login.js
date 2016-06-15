@@ -60,7 +60,7 @@ export class Login extends React.Component {
         }
         else {
           this.setState({ loading: false });
-          this.props.onAuthenticate(this.state.email, response.token)
+          this.props.onAuthenticate(response)
         }
       })
       .catch(() => {
